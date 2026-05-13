@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诚胜佳医疗器械有限公司 - 骨科矫形支具专业生产商</title>
+    <meta name="description" content="诚胜佳医疗专业生产骨科矫形支具，包括鸡胸支具、漏斗胸负压吸盘、髋关节蛙式支具、腿型固定器等，提供高品质医疗器械产品。">
+
+    <link rel="stylesheet" href="css/base.css?v=8.0">
+    <link rel="stylesheet" href="css/index-home.css?v=8.0">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner container-fluid">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="images/logo.png" alt="诚胜佳医疗">
+                    <div class="logo-content">
+                        <h1 class="logo-text">诚胜佳医疗</h1>
+                        <p class="logo-sub">Cheng Sheng Jia Medical</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-container">
+                <nav class="nav" id="nav">
+                    <div class="nav-item"><a href="index.html" class="active">首页</a></div>
+                    
+                    <div class="nav-item">
+                        <a href="qualifications.html">关于我们</a>
+                        <div class="subnav">
+                            <a href="qualifications.html#about-section">公司简介</a>
+                            <a href="qualifications.html#culture-section">企业文化</a>
+                            <a href="qualifications.html#honors-section">企业荣誉资质</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <a href="products.html">产品中心</a>
+                        <div class="subnav">
+                            <a href="products.html?category=胸廓畸形系列">胸廓畸形系列</a>
+                            <a href="products.html?category=上肢康复系列">上肢康复系列</a>
+                            <a href="products.html?category=下肢康复系列">下肢康复系列</a>
+                            <a href="products.html?category=脊柱固定系列">脊柱固定系列</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <a href="service.html">服务案例</a>
+                        <div class="subnav">
+                            <a href="service.html#about-section">服务流程</a>
+                            <a href="service.html#cases-section">矫正案例</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item"><a href="contact.html">联系我们</a></div>
+                    </nav>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <div class="hero-wrap">
+        <section class="hero">
+    <div class="container-fluid text-center">
+        <h1 class="hero-title">诚护成长    矫愈未来</h1>
+        <a href="javascript:void(0);" class="hero-btn" onclick="openVideoModal()">查看视频</a>
+    </div>
+</section>
+
+        <section class="stats-section">
+            <div class="container-fluid">
+                <div class="stats-grid">
+                    <div class="stat-item"><div class="stat-number" data-target="50">0</div><div class="stat-label">产品系列</div></div>
+                    <div class="stat-item"><div class="stat-number" data-target="3000">0</div><div class="stat-label">产品远销</div></div>
+                    <div class="stat-item"><div class="stat-number" data-target="80000">0</div><div class="stat-label">服务人次</div></div>
+                    <div class="stat-item"><div class="stat-number" data-target="500000">0</div><div class="stat-label">用户信任</div></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="section">
+        <div class="container-fluid">
+            <div class="home-about-layout">
+                <div class="home-about-img">
+                    <img src="images/index/1.png" alt="诚胜佳医疗大楼" onerror="this.src='images/logo.png'">
+                </div>
+                <div class="home-about-text">
+                    <h2 class="ha-title">关于我们</h2>
+                    <div class="ha-deco-line"><span></span><span></span></div>
+                    <h3 class="ha-subtitle">致力于高品质骨科矫形支具的研发与创新</h3>
+                    <div class="ha-desc">
+                        <p>诚胜佳医疗器械有限公司是一家专业从事矫形支具研发、生产和销售的企业。作为具有持续创新能力的科技型企业，我们专注于为骨科康复与矫形提供全链条解决方案。</p>
+                        <p>我们聚焦于物理矫形核心技术，拥有一流的生产设备和质量管理体系。主营产品包括鸡胸支具、漏斗胸负压吸盘、髋关节蛙式支具、腿型固定器等，所有产品均已通过国家一类医疗器械备案及相关资质认证，深受广大医疗机构和患者的信赖。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="ultimate-hot-products">
+        <div class="container-fluid">
+            <div class="uhp-header">
+                <div class="en-title">HOT PRODUCTS</div>
+                <div class="cn-title">热门产品</div>
+            </div>
+
+            <div class="uhp-slider-wrapper">
+                <button class="uhp-arrow left-arrow" onclick="slideUhp(-1)">&#10094;</button>
+
+                <div class="uhp-row" id="uhp-track">
+                    </div>
+
+                <button class="uhp-arrow right-arrow" onclick="slideUhp(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="honors-section">
+        <div class="container-fluid">
+            <div class="uhp-header">
+                <div class="en-title">HONORS & QUALIFICATIONS</div>
+                <div class="cn-title">荣誉资质</div>
+            </div>
+
+            <div class="cert-carousel-wrapper">
+                <div class="cert-carousel-container" id="certCarousel">
+                    <div class="cert-item"><img src="images/materials/1.jpg" alt="荣誉资质"></div>
+                    <div class="cert-item"><img src="images/materials/2.jpg" alt="荣誉资质"></div>
+                    <div class="cert-item"><img src="images/materials/3.jpg" alt="荣誉资质"></div>
+                    <div class="cert-item"><img src="images/materials/4.jpg" alt="荣誉资质"></div>
+                    <div class="cert-item"><img src="images/materials/5.jpg" alt="荣誉资质"></div>
+                    <div class="cert-item"><img src="images/materials/6.jpg" alt="荣誉资质"></div>
+                    <div class="cert-item"><img src="images/materials/7.jpg" alt="荣誉资质"></div>
+                    <div class="cert-item"><img src="images/materials/9.jpg" alt="荣誉资质"></div>
+                    <div class="cert-item"><img src="images/materials/10.jpg" alt="荣誉资质"></div>
+                </div>
+                <div class="cert-dots" id="certDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="business-scope-title-section">
+        <div class="container-fluid">
+            <div class="uhp-header" style="margin-bottom:0;">
+                <div class="en-title">BUSINESS SCOPE</div>
+                <div class="cn-title">业务范围</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="business-scope-map-section">
+        <canvas id="particleCanvas"></canvas>
+        <div class="map-plane">
+            <img src="images/index/china-map.jpg" class="tech-map-img" alt="中国地图">
+            <svg class="tech-lines-svg" preserveAspectRatio="none">
+                <line x1="78%" y1="52%" x2="80.5%" y2="54.5%" class="tech-line" />
+                
+                <line x1="78%" y1="52%" x2="75%" y2="40%" class="tech-line" />
+                <line x1="78%" y1="52%" x2="78%" y2="28%" class="tech-line" />
+                <line x1="78%" y1="52%" x2="65%" y2="58%" class="tech-line" />
+                <line x1="78%" y1="52%" x2="55%" y2="72%" class="tech-line" />
+                <line x1="78%" y1="52%" x2="45%" y2="78%" class="tech-line" />
+                <line x1="78%" y1="52%" x2="70%" y2="38%" class="tech-line" />
+                <line x1="78%" y1="52%" x2="20%" y2="35%" class="tech-line" />
+            </svg>
+            <div class="tech-node" style="left: 78%; top: 52%;"><div class="tech-dot"></div><div class="tech-label">江苏区域</div></div>
+            <div class="tech-node" style="left: 80.5%; top: 54.5%;"><div class="tech-dot"></div><div class="tech-label">上海区域</div></div>
+            <div class="tech-node" style="left: 75%; top: 40%;"><div class="tech-dot"></div><div class="tech-label">山东区域</div></div>
+            <div class="tech-node" style="left: 78%; top: 28%;"><div class="tech-dot"></div><div class="tech-label">辽宁区域</div></div>
+            <div class="tech-node" style="left: 20%; top: 35%;"><div class="tech-dot"></div><div class="tech-label">新疆区域</div></div>
+            <div class="tech-node" style="left: 70%; top: 38%;"><div class="tech-dot"></div><div class="tech-label">河北区域</div></div>
+            <div class="tech-node" style="left: 65%; top: 58%;"><div class="tech-dot"></div><div class="tech-label">湖北区域</div></div>
+            <div class="tech-node" style="left: 55%; top: 72%;"><div class="tech-dot"></div><div class="tech-label">贵州区域</div></div>
+            <div class="tech-node" style="left: 45%; top: 78%;"><div class="tech-dot"></div><div class="tech-label">云南区域</div></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-main">
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="qualifications.html">关于我们</a></li>
+                    <li><a href="products.html">产品中心</a></li>
+                    <li><a href="service.html">服务案例</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>产品中心</h4>
+                <ul>
+                    <li><a href="products.html?category=胸廓畸形系列">胸廓畸形系列</a></li>
+                    <li><a href="products.html?category=上肢康复系列">上肢康复系列</a></li>
+                    <li><a href="products.html?category=脊柱固定系列">脊柱固定系列</a></li>
+                    <li><a href="products.html?category=下肢康复系列">下肢康复系列</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>联系我们</h4>
+                <div class="contact-card">
+                    <p>电话：13645133558</p>
+                    <p>工厂地址：连云港经济技术开发区朝阳街道西庄路11-66</p>
+                    <p>邮箱：csjmedicalcare@qq.com</p>
+                </div>
+
+                <div class="footer-social-minimal">
+                    <div class="social-item">
+                        <div class="icon-circle"><img src="images/common/wechat.png" alt="微信"></div>
+                        <div class="qr-popup-mini">
+                            <img src="images/common/wechat-qr.jpg" alt="二维码" onerror="this.src='images/logo.png'">
+                        </div>
+                    </div>
+                    <div class="social-item">
+                        <div class="icon-circle"><img src="images/common/douyin.png" alt="抖音"></div>
+                        <div class="qr-popup-mini">
+                            <img src="images/common/douyin-qr.jpg" alt="二维码" onerror="this.src='images/logo.png'">
+                        </div>
+                    </div>
+                    <div class="social-item">
+                        <div class="icon-circle"><img src="images/common/xiaohongshu.png" alt="小红书"></div>
+                        <div class="qr-popup-mini">
+                            <img src="images/common/xiaohongshu-qr.jpg" alt="二维码" onerror="this.src='images/logo.png'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2026 诚胜佳医疗器械有限公司 | 苏ICP备XXXXXXXX号-1</p>
+        </div>
+    </div>
+</footer>
+<script src="js/index.js"></script>
+
+</body>
+<div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="close-video" onclick="closeVideoModal()">&times;</span>
+            <video id="promoVideo" controls>
+                <source src="video/video.mp4" type="video/mp4">
+                您的浏览器不支持 HTML5 视频播放。
+            </video>
+        </div>
+    </div>
+</html>

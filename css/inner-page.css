@@ -1,0 +1,125 @@
+/* =======================================================
+   内页通用头部与面包屑规范 - inner-page.css
+   (已移除电话号码，保持导航栏稳定)
+   ======================================================= */
+
+/* 1. 深色导航栏 (覆盖 base.css 的白色默认样式) */
+/* 深色导航栏容器：深蓝色背景，半透明白色边框 */
+.header-dark {
+    background-color: #020d1e !important; /* 深蓝色背景（!important覆盖默认样式） */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* 半透明白色下边框 */
+}
+
+/* 深色模式下的文字颜色适配：logo主文字白色，副标题浅灰，导航文字浅灰 */
+.header-dark .logo-text { color: #ffffff !important; } /* logo主文字白色 */
+.header-dark .logo-sub { color: #aaaaaa !important; } /* logo副标题浅灰 */
+.header-dark .nav-item > a { color: #dddddd !important; } /* 导航链接浅灰 */
+/* 导航链接hover/激活态：亮蓝色文字，下划线也为亮蓝色 */
+.header-dark .nav-item > a:hover,
+.header-dark .nav-item > a.active { color: #00e5ff !important; } /* 亮蓝色文字 */
+.header-dark .nav-item > a::after { background: #00e5ff !important; } /* 下划线亮蓝色 */
+
+/* 2. 内页大图 Banner */
+/* Banner容器：固定高度，渐变遮罩+背景图，弹性居中内容 */
+.inner-hero {
+    height: 500px; /* Banner固定高度 */
+    /* 背景：渐变遮罩（深蓝60%不透明度）+ 背景图居中覆盖 */
+    background: linear-gradient(rgba(2, 13, 30, 0.6), rgba(2, 13, 30, 0.6)), url('../images/products/1.png') center/cover;
+    display: flex; /* 弹性布局，让内容垂直居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* Banner内容容器：最大宽度1400px，水平居中，左右内边距 */
+.inner-hero-content {
+    max-width: 1400px; /* 最大宽度，限制内容范围 */
+    margin: 0 auto; /* 水平居中 */
+    padding: 0 20px; /* 左右内边距，适配小屏 */
+    width: 100%; /* 占满父容器宽度 */
+}
+
+
+/* Banner英文标题：大号字体，白色，加粗，字间距优化 */
+.inner-hero-en {
+    font-size: 60px; /* 大号字号 */
+    color: #ffffff; /* 白色文字 */
+    font-family: Arial, sans-serif; /* 英文专用字体 */
+    font-weight: bold; /* 加粗 */
+    margin-bottom: 10px; /* 底部外边距，与中文标题分隔 */
+    letter-spacing: 1px; /* 字间距，提升视觉效果 */
+}
+
+/* Banner中文标题：大号字体，白色，加粗，字间距优化 */
+.inner-hero-cn {
+    font-size: 60px; /* 字号略小于英文 */
+    color: #ffffff; /* 白色文字 */
+    font-weight: bold; /* 加粗 */
+    letter-spacing: 2px; /* 字间距，提升排版质感 */
+}
+
+/* 3. 导航栏下方的一行 (面包屑栏) */
+/* 面包屑栏容器：白色背景，固定高度，底部浅灰边框 */
+.inner-breadcrumb-bar {
+    background: #ffffff; /* 白色背景 */
+    height: 60px; /* 固定高度 */
+    border-bottom: 1px solid #eaeaea; /* 底部浅灰边框，视觉分隔 */
+}
+
+/* 面包屑内容容器：最大宽度1400px，水平居中，弹性布局左右分布 */
+.inner-breadcrumb-container {
+    max-width: 1400px; /* 最大宽度，限制内容范围 */
+    margin: 0 auto; /* 水平居中 */
+    padding: 0 20px; /* 左右内边距 */
+    height: 100%; /* 占满父容器高度，实现垂直居中 */
+    display: flex; /* 弹性布局 */
+    justify-content: space-between; /* 内容左右分布（左侧面包屑，右侧标签） */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 左侧面包屑：弹性布局，间距8px，浅灰文字 */
+.breadcrumb-left {
+    display: flex; /* 弹性布局，面包屑项横向排列 */
+    align-items: center; /* 垂直居中 */
+    gap: 8px; /* 项之间的间距 */
+    font-size: 14px; /* 小字号 */
+    color: #666; /* 浅灰色文字 */
+}
+/* 面包屑链接默认样式：浅灰，hover变主色 */
+.breadcrumb-left a { color: #666; }
+.breadcrumb-left a:hover { color: var(--primary-color); }
+
+/* 右侧标签栏：弹性布局，占满父容器高度 */
+.breadcrumb-tabs {
+    display: flex; /* 弹性布局，标签横向排列 */
+    height: 100%; /* 占满面包屑栏高度 */
+}
+
+/* 标签按钮：固定内边距，占满高度，弹性居中，右侧分隔边框 */
+.tab-btn {
+    padding: 0 30px; /* 左右内边距，保证点击区域 */
+    height: 100%; /* 占满父容器高度，垂直居中 */
+    display: flex; /* 弹性布局，文字居中 */
+    align-items: center; /* 垂直居中 */
+    font-size: 15px; /* 字号 */
+    color: #333; /* 深灰色文字 */
+    border: none; /* 去掉默认按钮边框 */
+    background: transparent; /* 透明背景 */
+    border-right: 1px solid #eaeaea; /* 右侧浅灰边框，分隔标签 */
+    cursor: pointer; /* 鼠标手型，标识可点击 */
+    position: relative; /* 为激活态下划线定位做准备 */
+}
+
+/* 激活态标签：主色文字，加粗，底部显示主色下划线 */
+.tab-btn.active {
+    color: var(--primary-color); /* 主色文字 */
+    font-weight: bold; /* 加粗 */
+}
+/* 激活态标签下划线：绝对定位，底部3px高度主色线条 */
+.tab-btn.active::after {
+    content: ''; /* 空内容，仅显示样式 */
+    position: absolute; /* 绝对定位，相对于标签按钮 */
+    bottom: -1px; /* 定位到底部（覆盖面包屑栏下边框） */
+    left: 0; /* 左对齐 */
+    width: 100%; /* 占满标签宽度 */
+    height: 3px; /* 下划线高度 */
+    background: var(--primary-color); /* 主色背景 */
+}

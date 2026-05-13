@@ -1,0 +1,205 @@
+/* =======================================================
+   企业荣誉资质(更多)展示页特有设计 - qualifications-1-page.css
+   (包含最新修复：Banner 文字与 Logo 左对齐，以及面包屑居中对齐)
+   ======================================================= */
+
+/* 限制整体内容宽度并居中，确保与主页完全对齐 */
+.q-container {
+    width: 92%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+
+
+/* =======================================================
+   下方网格区域样式 (8个证书的排版)
+   ======================================================= */
+.qualifications-more-page {
+    padding: 50px 0 100px;
+    background: #fff;
+}
+
+/* 4列网格布局 */
+.qualification-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px; /* 统一成1400px与q-container一致 */
+    margin: 0 auto;
+}
+
+/* 证书卡片样式 */
+.qual-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* 鼠标悬停时的浮动和发光效果 */
+.qual-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 140, 140, 0.15);
+    border-color: var(--primary-color);
+}
+
+.qual-item img {
+    width: 100%;
+    height: 240px; /* 适当增加高度让证书看起来更大气 */
+    object-fit: contain; /* 保证图片完整显示，不被裁剪 */
+    background: #fcfcfc;
+    padding: 20px;
+}
+
+.qual-item p {
+    text-align: center;
+    padding: 15px;
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+    border-top: 1px solid #eee;
+    margin: 0;
+}
+
+/* =======================================================
+   响应式适配 (平板与手机端)
+   ======================================================= */
+@media (max-width: 1200px) {
+    .qualification-wrap {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .qualification-wrap { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .inner-hero {
+        height: 300px !important;
+        min-height: 300px !important;
+    }
+    .inner-hero-en { font-size: 32px !important; }
+    .inner-hero-cn { font-size: 28px !important; }
+}
+
+@media (max-width: 768px) {
+    .qualification-wrap { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* =======================================================
+   同步面包屑右侧标签按键样式 (强制与 qualifications 保持 100% 一致)
+   ======================================================= */
+
+/* 面包屑整个横条的外框，控制高度和底部边线 */
+.breadcrumb-bar {
+    background: #fafafa !important; /* 强制背景色，恢复灰色长条 */
+    border-bottom: 1px solid #eaeaea !important;
+    height: 70px !important;
+    width: 100% !important;
+}
+
+/* 面包屑内部容器，使用 Flex 布局让左右两端对齐 */
+.breadcrumb-inner {
+    display: flex !important; /* 强制水平布局，解决换行堆叠问题 */
+    justify-content: space-between !important; /* 强制左右两端对齐 */
+    align-items: center !important;
+    height: 100% !important;
+}
+
+/* 面包屑左侧部分 */
+.breadcrumb-left {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb-left a {
+    color: #666;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.breadcrumb-left a:hover {
+    color: var(--primary-color);
+}
+
+/* 面包屑右侧部分：包裹切换标签的容器 */
+.breadcrumb-tabs {
+    display: flex !important;
+    height: 100%;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+}
+
+/* 面包屑右侧：具体的每一个标签按钮 */
+.tab-btn {
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+    border-right: 1px solid #eaeaea;
+}
+
+.tab-btn:last-child {
+    border-right: none;
+}
+
+/* 标签激活/悬停状态 */
+.tab-btn.active,
+.tab-btn:hover {
+    color: var(--primary-color);
+    background: #fff;
+    font-weight: bold;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .breadcrumb-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .tab-btn {
+        padding: 0 20px;
+    }
+
+    /* 手机端允许换行 */
+    .breadcrumb-inner {
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 10px;
+    }
+
+    .breadcrumb-bar {
+        height: auto !important;
+        padding: 10px 0;
+    }
+}

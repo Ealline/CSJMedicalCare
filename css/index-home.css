@@ -1,0 +1,364 @@
+/* =======================================================
+   首页独有样式 - index-home.css
+   包含：Banner、数据统计、关于我们、热门产品、轮播、地图等
+   ======================================================= */
+
+:root {
+    /* 调整这个数字即可：数字越小，模块之间越紧凑；数字越大，间隙越开 */
+    --section-padding: 30px;
+    --section-gap: 50px;
+}
+
+/* --- 统一全局间距变量 --- */
+:root {
+    --section-gap: 50px; /* 👈 统一所有大模块之间的呼吸间距 */
+}
+
+/* --- 1. 统一标题组件（解决太靠上的问题） --- */
+.uhp-header {
+    width: 100% !important;
+    text-align: center !important;
+    /* 取消所有凌乱的 padding，统一设置为上下各 50px */
+    /* 核心修改：强制上下间距完全一致，左右为0 */
+    padding: 60px 0 !important;
+    margin: 0 !important;
+    background: #fff; /* 确保背景纯净 */
+}
+
+.uhp-header .en-title {
+    font-size: 26px !important;
+    color: #222 !important;
+    font-weight: 900 !important;
+    font-family: "Arial Black", sans-serif !important;
+    letter-spacing: 4px !important;
+    margin-bottom: 10px !important;
+    text-transform: uppercase !important;
+}
+
+.uhp-header .cn-title {
+    font-size: 32px !important;
+    color: #222 !important;
+    font-weight: bold !important;
+    letter-spacing: 6px !important;
+    margin: 0 !important;
+}
+
+/* --- 2. 热门产品模块 --- */
+#ultimate-hot-products {
+    background: #fff !important;
+    padding: 0 0 var(--section-gap) 0 !important; /* 只保留底部间距，顶部靠标题撑开 */
+    margin: 0 !important;
+}
+
+/* --- 3. 荣誉资质模块 --- */
+.honors-section {
+    background: #fdfdfd !important;
+    padding: 0 0 var(--section-gap) 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+}
+
+/* --- 4. 业务范围模块 --- */
+.business-scope-title-section {
+    background: #fff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.business-scope-map-section {
+    position: relative;
+    background: #010a1f;
+    height: 600px;
+    overflow: hidden;
+}
+
+/* --- 轮播图内部微调（防止圆点太靠下） --- */
+.cert-carousel-wrapper {
+    margin: 20px auto 0 !important;
+}
+.cert-dots {
+    margin-top: 15px !important;
+}
+
+/* 1. 首屏 Banner & 底部数据栏 */
+.hero-wrap { display: flex; flex-direction: column; width: 100%; }
+.hero { background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)), url('../images/index/2.png') center/cover; padding: 180px 0 120px 0; text-align: center; }
+/* --- Banner 大标题样式修改 --- */
+.hero-title {
+    font-size: 100px;
+    font-weight: 900;
+    color: #333;
+    margin-bottom: 45px; /* 因为去掉了副标题，稍微增加底部间距让视觉更平衡 */
+    letter-spacing: 4px;
+    /* 设置为楷体 */
+    font-family: "STKaiti", "楷体", "KaiTi", serif !important;
+}
+
+/* --- 查看视频按钮样式修改 --- */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 45px;
+    background: transparent;
+    color: var(--blue-color);
+    border: 2px solid var(--blue-color);
+    font-size: 16px;
+    border-radius: 40px;
+    transition: all 0.3s;
+    font-weight: bold;
+    /* 设置为黑体 */
+    font-family: "SimHei", "黑体", "Heiti SC", sans-serif !important;
+}
+
+/* 悬停效果保持不变 */
+.hero-btn:hover {
+    background: var(--blue-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
+}
+
+.stats-section { background: var(--blue-color); color: #fff; padding: 40px 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }
+.stat-number { font-size: 50px; font-weight: bold; line-height: 1.1; margin-bottom: 5px; font-family: Arial, sans-serif; }
+.stat-label { font-size: 15px; opacity: 0.9; }
+
+/* 2. 关于我们 */
+.home-about-layout { display: flex; align-items: center; gap: 60px; }
+.home-about-img { flex: 0 0 45%; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); }
+.home-about-img img { width: 100%; height: auto; display: block; object-fit: cover; }
+.home-about-text { flex: 1; padding-right: 20px; }
+.ha-title { font-size: 38px; color: #222; font-weight: 900; margin-bottom: 15px; letter-spacing: 2px; }
+.ha-deco-line { display: flex; gap: 8px; margin-bottom: 25px; }
+.ha-deco-line span:first-child { width: 40px; height: 4px; background: var(--primary-color); border-radius: 2px; }
+.ha-deco-line span:last-child { width: 12px; height: 4px; background: #ddd; border-radius: 2px; }
+.ha-subtitle { font-size: 20px; color: #333; font-weight: bold; margin-bottom: 20px; line-height: 1.5; }
+.ha-desc p { font-size: 15px; color: #666; line-height: 1.9; margin-bottom: 15px; text-align: justify; }
+
+/* 3. 热门产品 */
+#ultimate-hot-products { background: #fff; padding: var(--section-padding) 0; }
+/* --- 统一标题组件：修复不居中和位置不一的问题 --- */
+.uhp-header {
+    width: 100% !important;
+    text-align: center !important; /* 强制容器内所有元素居中 */
+    padding: var(--section-gap) 0 40px 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* 确保弹性盒模型下的子元素也居中 */
+}
+
+.uhp-header .en-title {
+    font-size: 26px !important;
+    color: #444 !important;
+    font-weight: 900 !important;
+    font-family: "Arial Black", sans-serif !important;
+
+    /* --- 核心修复逻辑 --- */
+    letter-spacing: 4px !important;
+    text-indent: 4px !important; /* 👈 必须设置和字间距一样的缩进，才能实现真正的绝对居中 */
+
+    margin: 0 0 8px 0 !important; /* 移除左右 margin，只留底部间距 */
+    text-transform: uppercase !important;
+    line-height: 1.2 !important;
+    width: fit-content !important; /* 让容器宽度随文字变化 */
+}
+
+.uhp-header .cn-title {
+    font-size: 32px !important;
+    color: #222 !important;
+    font-weight: bold !important;
+
+    /* --- 核心修复逻辑 --- */
+    letter-spacing: 6px !important;
+    text-indent: 6px !important; /* 👈 中文同样需要这个补偿 */
+
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    width: fit-content !important;
+}
+
+.uhp-slider-wrapper { position: relative; width: 100%; overflow: hidden; padding: 0 50px; box-sizing: border-box; }
+.uhp-row { display: flex; flex-wrap: nowrap; overflow-x: hidden; scroll-behavior: smooth; gap: 30px; }
+/* --- 卡片默认状态：白底，主色（绿色）边框 --- */
+.uhp-item {
+    flex: 0 0 calc(25% - 22.5px);
+    background-color: #ffffff; /* 改为白色背景 */
+    border: 1px solid var(--primary-color); /* 添加绿色边框 */
+    border-radius: 8px;
+    padding: 40px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* 卡片悬停状态：加深阴影，保持绿框 */
+.uhp-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    background-color: #ffffff;
+    border: 1px solid var(--primary-color);
+}
+
+/* (这里的文本和图片样式保持你原有的不变) */
+.uhp-text { text-align: center; margin-bottom: 30px; height: 90px; }
+.uhp-text h3 { font-size: 22px; color: #222; margin-bottom: 10px; font-weight: bold; }
+.uhp-text p { font-size: 14px; color: #777; line-height: 1.6; }
+.uhp-img { height: 160px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; }
+.uhp-img img { max-width: 90%; max-height: 100%; object-fit: contain; transition: transform 0.4s ease; }
+.uhp-item:hover .uhp-img img { transform: scale(1.1); }
+
+/* --- 按钮样式：实心绿底、白字、圆角（图2效果） --- */
+.uhp-btn {
+    padding: 10px 35px; /* 加宽一点更好看 */
+    background-color: var(--primary-color); /* 绿色背景 */
+    color: #ffffff !important; /* 白色文字 */
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none; /* 移除原本的边框 */
+    transition: all 0.3s ease;
+}
+
+/* 按钮悬停状态：颜色稍微加深并增加发光阴影 */
+.uhp-item:hover .uhp-btn {
+    background-color: #006b6b; /* 悬停时颜色加深 */
+    color: #ffffff !important;
+    box-shadow: 0 5px 15px rgba(0, 140, 140, 0.3);
+}
+.uhp-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; background-color: #fff; color: var(--blue-color); border: 1px solid #eee; border-radius: 50%; font-size: 20px; cursor: pointer; z-index: 10; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; display: flex; align-items: center; justify-content: center; }
+.uhp-arrow:hover { background-color: var(--blue-color); color: #fff; }
+.left-arrow { left: 0; }
+.right-arrow { right: 0; }
+
+/* 4. 荣誉资质 */
+.honors-section { background: #fdfdfd; padding-top: var(--section-padding); padding-bottom: 120px; overflow: hidden; }
+.cert-carousel-wrapper { position: relative; width: 100%; margin: 40px auto 0; perspective: 1600px; padding: 20px 0; }
+.cert-carousel-container { position: relative; width: 100%; height: 450px; display: flex; justify-content: center; align-items: center; transform-style: preserve-3d; }
+.cert-item { position: absolute; width: 300px; height: 420px; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.7s ease, z-index 0s; cursor: pointer; background: #fff; border: 8px solid #fff; box-shadow: -15px 15px 30px rgba(0,0,0,0.08); border-radius: 4px; display: flex; align-items: center; justify-content: center; visibility: visible; }
+.cert-item img { width: 100%; height: 100%; object-fit: cover; border: 1px solid #eee; }
+.cert-item.active { box-shadow: 0 25px 60px rgba(0, 86, 179, 0.2); border: 12px solid #fff; }
+.cert-dots { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 30px; }
+.cert-dot { width: 10px; height: 10px; border-radius: 50%; background: #ddd; cursor: pointer; transition: 0.3s; }
+.cert-dot.active { background: var(--primary-color); width: 30px; border-radius: 5px; }
+
+/* 5. 业务范围 */
+.business-scope-title-section { background: #fff; padding: var(--section-padding) 0 20px 0; }
+/* --- 业务范围地图模块 --- */
+.business-scope-map-section {
+    position: relative;
+    background: #010a1f;
+    background-image: radial-gradient(circle at center, #06193b 0%, #01040a 100%);
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+
+    /* --- 核心修复：四个角统一圆角 --- */
+    border-radius: 20px !important;
+
+    /* --- 核心修复：与下方页脚留出 80px 空白 --- */
+    margin-bottom: 100px !important;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+#particleCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+.map-plane { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; z-index: 10; }
+.tech-map-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: fill; z-index: 2; filter: invert(1) sepia(1) saturate(100) hue-rotate(180deg) brightness(1.5) contrast(5); mix-blend-mode: screen; opacity: 0.6; }
+.tech-lines-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; }
+.tech-line { fill: none; stroke: #00e5ff; stroke-width: 2; stroke-dasharray: 6 10; opacity: 0.8; animation: dashLinear 20s linear infinite; }
+@keyframes dashLinear { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+.tech-node { position: absolute; z-index: 5; width: 0 !important; height: 0 !important; transform: none !important; }
+.tech-dot { position: absolute; top: 0; left: 0; transform: translate(-50%, -50%); width: 10px; height: 10px; background: #00e5ff; border-radius: 50%; box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff; }
+.tech-dot::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 28px; height: 28px; border: 1px solid rgba(0, 229, 255, 0.8); border-radius: 50%; animation: pulseRing 2s infinite ease-out; }
+@keyframes pulseRing { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; } }
+.tech-label { position: absolute; top: 12px; left: 0; transform: translateX(-50%); color: #00e5ff; font-size: 13px; font-weight: bold; letter-spacing: 1px; white-space: nowrap; text-shadow: 0 0 10px rgba(0, 229, 255, 0.8); transition: all 0.3s ease; cursor: pointer; }
+.tech-node:hover .tech-label { color: #fff; text-shadow: 0 0 20px #00e5ff; }
+
+/* --- 响应式 --- */
+@media (max-width: 1200px) {
+    .uhp-item { flex: 0 0 calc(33.333% - 20px); }
+    .home-about-layout { flex-direction: column; }
+}
+@media (max-width: 768px) {
+    .uhp-item { flex: 0 0 100%; margin-right: 0; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .business-scope-map-section { height: 400px; }
+}
+
+/* =======================================================
+   视频弹窗样式
+   ======================================================= */
+.video-modal {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    z-index: 9999; /* 确保层级最高，盖住导航栏 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* 黑色半透明背景 */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* 弹窗显示时的动画类 */
+.video-modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.video-modal.show .video-modal-content {
+    transform: translateY(0);
+}
+
+.video-modal-content video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* 关闭按钮 */
+.close-video {
+    position: absolute;
+    top: -45px;
+    right: -10px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.close-video:hover {
+    color: var(--primary-color);
+}
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+    .video-modal-content {
+        width: 95%;
+    }
+    .close-video {
+        top: -40px;
+        right: 0;
+    }
+}

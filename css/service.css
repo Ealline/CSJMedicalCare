@@ -1,0 +1,203 @@
+
+:root {
+    --q-section-padding: 80px;
+}
+
+.q-section { padding: var(--q-section-padding) 0; background: #fff; }
+.q-container { width: 92%; max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+
+/* --- 1. 面包屑与通用标题 --- */
+.breadcrumb-bar { background: #fafafa; border-bottom: 1px solid #eaeaea; height: 70px; }
+.breadcrumb-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.breadcrumb-left { font-size: 14px; color: #666; display: flex; align-items: center; gap: 8px; }
+.breadcrumb-left a { color: #666; transition: 0.3s; }
+.breadcrumb-left a:hover { color: var(--primary-color); }
+.breadcrumb-tabs { display: flex; height: 100%; border-left: 1px solid #eaeaea; border-right: 1px solid #eaeaea; }
+.tab-btn { padding: 0 40px; height: 100%; display: flex; align-items: center; font-size: 16px; color: #333; border: none; background: transparent; cursor: pointer; position: relative; transition: all 0.3s; border-right: 1px solid #eaeaea; }
+.tab-btn:last-child { border-right: none; }
+.tab-btn.active, .tab-btn:hover { color: var(--primary-color); background: #fff; font-weight: bold; }
+.tab-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background: var(--primary-color); }
+
+.section-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
+.section-title-box h2 { font-size: 28px; color: #222; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.8px; }
+.section-deco { display: flex; gap: 8px; }
+.section-deco span:first-child { width: 35px; height: 4px; background: var(--primary-color); border-radius: 2px; }
+.section-deco span:last-child { width: 15px; height: 4px; background: #ccc; border-radius: 2px; }
+
+/* --- 2. 了解诚胜佳 (图文与数据) --- */
+.about-flex-container { display: flex; gap: 40px; align-items: flex-start; }
+.about-left-stats { flex: 0 0 22%; display: flex; gap: 50px; padding-top: 10px; }
+.stat-box { display: flex; flex-direction: column; }
+.stat-val-group { border-bottom: 1px solid #eaeaea; padding-bottom: 10px; margin-bottom: 15px; }
+.stat-val { font-size: 56px; font-weight: bold; color: var(--primary-color); line-height: 1; font-family: Arial, Helvetica, sans-serif; }
+.stat-plus { font-size: 24px; font-weight: bold; color: var(--primary-color); vertical-align: super; }
+.stat-box p { font-size: 14px; color: #555; font-weight: bold; letter-spacing: 1px; }
+
+.about-right-text { flex: 1; }
+.about-right-text p { text-indent: 2em; font-family: "SimHei", "黑体", sans-serif; font-size: 16px; color: #555; line-height: 2; text-align: justify; margin-bottom: 15px; }
+
+/* --- 3. 4图画廊展示区 --- */
+.gallery-section { padding: 0; background: #fff; }
+.about-image-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: -30px; }
+.gallery-item { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* --- 4. 真实矫正案例 (滑动组件) --- */
+.cases-section { background: #fafcff; padding-bottom: 100px !important; overflow: hidden; }
+.cases-slider-wrapper { position: relative; padding: 0 60px; margin-top: 30px; max-width: 1400px; margin-left: auto; margin-right: auto; }
+.cases-mask { overflow: hidden; width: 100%; padding: 10px 0; }
+.cases-track { display: flex; gap: 30px; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform; }
+
+.case-card {
+    flex: 0 0 calc(33.333% - 20px); /* 一屏展示三个卡片 */
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 这几行极其关键：强制限制图片的框高，防止被原图撑爆！ */
+.case-img-compare { display: flex; width: 100%; height: 260px; border-bottom: 1px solid #eee; background: #f9f9f9; }
+.case-img-compare .img-box { flex: 1; position: relative; overflow: hidden; height: 100%; }
+.case-img-compare .img-box:first-child { border-right: 2px dashed #ddd; }
+.case-img-compare img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.case-card:hover .case-img-compare img { transform: scale(1.08); }
+
+.img-label { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); padding: 6px 16px; color: #fff; font-size: 13px; font-weight: bold; border-radius: 20px; backdrop-filter: blur(4px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); letter-spacing: 1px; z-index: 5; }
+.before-label { background: rgba(130, 130, 130, 0.85); }
+.after-label { background: rgba(0, 150, 136, 0.9); }
+
+.case-info { padding: 30px 25px; flex: 1; }
+.case-info h4 { font-size: 20px; color: #222; font-weight: bold; margin-bottom: 20px; text-align: center; position: relative; padding-bottom: 15px; }
+.case-info h4::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--primary-color); border-radius: 2px; }
+.case-info p { font-size: 14.5px; color: #555; line-height: 1.7; margin-bottom: 12px; text-align: justify; }
+.case-info p strong { color: var(--primary-color); font-weight: bold; }
+
+/* 左右滑动箭头 */
+.case-arrow { position: absolute; top: 40%; transform: translateY(-50%); width: 45px; height: 45px; background: #fff; border: 1px solid #ddd; border-radius: 50%; color: var(--primary-color); font-size: 18px; cursor: pointer; z-index: 10; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.case-arrow:hover { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+.left-arrow { left: 5px; }
+.right-arrow { right: 5px; }
+
+/* ==================== 服务流程列表样式 (图文紧凑型排版) ==================== */
+.service-process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 减小每个卡片之间的间距，让整体高度更短 */
+    margin-top: 5px;
+}
+
+.process-item {
+    display: flex;
+    align-items: center; /* 确保文字和右边的图片垂直居中对齐 */
+    justify-content: space-between;
+    background: #f9fbfc;
+    padding: 18px 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.process-item:hover {
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transform: translateX(5px);
+}
+
+/* --- 左侧文字区域 --- */
+.process-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1; /* 占据左侧剩下的所有空间 */
+    padding-right: 30px; /* 给右边图片留出呼吸感，防止文字贴脸 */
+}
+
+.process-num {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--primary-color);
+    opacity: 0.3;
+    font-family: "Arial Black", sans-serif;
+    line-height: 1;
+    padding-top: 2px;
+}
+
+.process-item:hover .process-num {
+    opacity: 0.8;
+}
+
+.process-info h4 {
+    font-size: 17px;
+    color: #222;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.process-info p {
+    font-size: 14px !important;
+    color: #666 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    text-indent: 0 !important;
+}
+
+/* --- 右侧图片缩略图 --- */
+.process-right-img {
+    width: 140px; /* 固定缩略图宽度 */
+    height: 90px; /* 固定高度，呈现好看的宽银幕比例 */
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0; /* 极其重要：绝对不许被左边文字挤扁 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.process-right-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保证图片铺满不拉伸变形 */
+    transition: transform 0.4s ease;
+}
+
+.process-item:hover .process-right-img img {
+    transform: scale(1.1); /* 鼠标放上去时图片微微放大，质感拉满 */
+}
+
+/* --- 手机端自动变成上下排版 --- */
+@media (max-width: 768px) {
+    .process-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .process-left {
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+    .process-right-img {
+        width: 100%;
+        height: 160px;
+    }
+}
+
+/* --- 5. 响应式适配 --- */
+@media (max-width: 1200px) {
+    .about-flex-container { flex-direction: column; gap: 40px; }
+    .about-left-stats { width: 100%; justify-content: flex-start; }
+}
+@media (max-width: 992px) {
+    .about-image-gallery { grid-template-columns: repeat(2, 1fr); }
+    .case-card { flex: 0 0 calc(50% - 15px); } /* 中屏显示2个 */
+}
+@media (max-width: 768px) {
+    .section-header-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .breadcrumb-tabs { overflow-x: auto; white-space: nowrap; }
+    .tab-btn { padding: 0 20px; }
+    .case-card { flex: 0 0 100%; } /* 小屏显示1个 */
+}
+@media (max-width: 600px) {
+    .about-image-gallery { grid-template-columns: 1fr; }
+}

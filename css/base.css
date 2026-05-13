@@ -1,0 +1,362 @@
+
+:root {
+    --primary-color: #008c8c;
+    --blue-color: #0056B3;
+    --text-color: #333;
+    --bg-white: #ffffff;
+    --footer-bg: #000000;
+    --section-padding: 80px;
+}
+
+/* --- 全局重置 --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.text-center { text-align: center; }
+
+/* --- 通用容器 --- */
+.container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+.container-fluid { max-width: 1500px; margin: 0 auto; padding: 0 20px; }
+.section { padding: var(--section-padding) 0; }
+
+/* =======================================================
+   公共导航栏 (80% 精致比例 + 极致透明毛玻璃悬浮)
+   ======================================================= */
+.header {
+    /* 1. 极致透明背景 (0.25) */
+    background: rgba(255, 255, 255, 0.25);
+
+    /* 2. 毛玻璃模糊特效 */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    /* 3. 悬浮质感：阴影与细微边框 */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+    /* 4. 绝对悬浮：让图片盖在导航栏下方 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* 导航栏整体高度 72px (原90px的80%) */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    padding: 0 20px;
+}
+
+.logo-container { display: flex; align-items: center; }
+.logo { display: flex; align-items: center; gap: 8px; }
+
+/* Logo 图片大小 56px (原70px的80%) */
+.logo img { width: 56px; height: 56px; object-fit: cover; }
+
+.logo-content { display: flex; flex-direction: column; }
+
+/* “诚胜佳”文字大小 26px (原32px的80%) */
+.logo-text { font-size: 26px; font-weight: 900; color: var(--blue-color); letter-spacing: 1px; line-height: 1.1; margin: 0; }
+.logo-sub { font-size: 10px; color: #888; font-family: Arial, sans-serif; margin: 0; }
+
+.nav-container { flex: 1; display: flex; justify-content: flex-end; align-items: center; margin-right: 20px; }
+
+/* 菜单间距 32px (原40px的80%) */
+.nav { display: flex; gap: 32px; }
+
+/* 菜单高度跟随 72px */
+.nav-item { position: relative; display: flex; align-items: center; height: 72px; }
+
+/* 菜单字体 16px (原20px的80%) */
+.nav-item > a {
+    font-family: "等线", "DengXian", sans-serif;
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+    padding: 8px 0;
+    display: block;
+    position: relative;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+.nav-item > a:hover, .nav-item > a.active { color: var(--primary-color); }
+.nav-item > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    transition: width 0.3s;
+}
+.nav-item > a:hover::after, .nav-item > a.active::after { width: 100%; }
+
+/* 下拉菜单 */
+.subnav {
+    position: absolute;
+    top: 72px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    min-width: 120px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border-radius: 4px;
+    text-align: center;
+}
+.nav-item:hover .subnav { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.subnav a { display: block; padding: 10px 16px; font-size: 13px; color: #555; text-decoration: none; transition: background 0.3s; }
+.subnav a:hover { background: #f5f7fa; color: var(--primary-color); }
+
+.mobile-menu-btn { display: none; font-size: 20px; cursor: pointer; color: var(--primary-color); margin-left: 20px; }
+
+/* =======================================================
+   公共页面布局 (左侧菜单+右侧内容)
+   ======================================================= */
+.page-layout { display: flex; align-items: flex-start; gap: 40px; padding: 40px 0 80px 0; width: 100%; margin: 0 auto; }
+
+/* ==================== 诚胜佳 - 极简紧凑型页脚 ==================== */ 
+.footer { 
+    background-color: #0b1119; 
+    padding: 40px 0 20px; /* 大幅缩小上下内边距，实现高度减半 */ 
+    color: #fff; 
+} 
+
+.footer-main { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1.5fr; 
+    gap: 30px; 
+    margin-bottom: 30px; /* 缩小间距 */ 
+} 
+
+.footer-col h4 { 
+    font-size: 16px; 
+    margin-bottom: 15px; /* 标题间距缩小 */ 
+    color: #fff; 
+} 
+
+.footer-col ul li { margin-bottom: 8px; } 
+.footer-col ul li a { color: #888; font-size: 13px; } 
+
+/* 联系方式紧凑排版 - 统一字号与颜色 */ 
+.contact-card p { 
+    font-size: 13px; 
+    color: #888; /* 统一的低调灰白色 */ 
+    margin-bottom: 8px; 
+    letter-spacing: 0.5px; 
+} 
+
+/* 鼠标悬浮时稍微提亮一点点（可选） */ 
+.contact-card p:hover { 
+    color: #ccc; 
+} 
+
+/* --- ✨ 核心：白底圆形社交图标 --- */ 
+.footer-social-minimal { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 20px; /* 与上方联系方式保持距离 */ 
+} 
+
+.social-item { 
+    position: relative; 
+} 
+
+/* --- ✨ 核心修复：页脚白底黑标圆形社交图标 --- */ 
+/* 增加 .footer-social-minimal 前缀，绝对防止被其他页面的样式干扰 */ 
+.footer-social-minimal .icon-circle { 
+    width: 36px !important; 
+    height: 36px !important; 
+    background: #ffffff !important; /* 绝对强制白底 */ 
+    border-radius: 50% !important; 
+    display: flex !important; 
+    justify-content: center !important; 
+    align-items: center !important; 
+    transition: all 0.3s ease !important; 
+    cursor: pointer !important; 
+} 
+
+.footer-social-minimal .icon-circle img { 
+    width: 20px !important; 
+    height: 20px !important; 
+    filter: brightness(0) !important; 
+    opacity: 1 !important; 
+} 
+
+.footer-social-minimal .social-item:hover .icon-circle { 
+    transform: translateY(-3px) !important; 
+    background: var(--primary-color) !important; 
+} 
+
+.footer-social-minimal .social-item:hover .icon-circle img { 
+    filter: brightness(0) invert(1) !important; 
+} 
+
+/* --- 极简二维码弹窗 (无文字版) --- */ 
+.qr-popup-mini { 
+    position: absolute; 
+    bottom: 130%; 
+    left: 50%; 
+    transform: translateX(-50%) translateY(10px); 
+    background: #fff; 
+    padding: 8px; /* 缩小内边距 */ 
+    border-radius: 4px; 
+    width: 110px; /* 弹窗也变小，更精致 */ 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: 0.3s; 
+    z-index: 10; 
+} 
+
+.qr-popup-mini::after { 
+    content: ''; 
+    position: absolute; 
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border: 6px solid transparent; 
+    border-top-color: #fff; 
+} 
+
+.social-item:hover .qr-popup-mini { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateX(-50%) translateY(0); 
+} 
+
+.qr-popup-mini img { 
+    width: 100%; 
+    display: block; 
+    filter: none !important; 
+} 
+
+/* 底部版权行紧凑化 */ 
+.footer-bottom { 
+    border-top: 1px solid rgba(255,255,255,0.05); 
+    padding-top: 15px; 
+    text-align: center; 
+    font-size: 12px; 
+    color: #555; 
+}
+
+/* --- 响应式规则 --- */
+@media (max-width: 1200px) {
+    .nav { gap: 24px; }
+    .nav-item > a { font-size: 15px; }
+}
+@media (max-width: 992px) {
+    .header-inner { height: 64px; }
+    .logo img { width: 48px; height: 48px; }
+    .logo-text { font-size: 22px; }
+    .nav { gap: 16px; }
+    .nav-item > a { font-size: 14px; }
+    .nav-item { height: 64px; }
+    .subnav { top: 64px; }
+    .footer-content { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .nav {
+        display: none; position: absolute; top: 100%; left: 0; width: 100%;
+        background: #fff; flex-direction: column; gap: 0; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    .nav.active { display: flex; }
+    .nav-item { height: auto; border-bottom: 1px solid #eee; }
+    .nav-item > a { padding: 12px 20px; font-size: 15px; }
+    .mobile-menu-btn { display: block; }
+}
+
+/* ======================================================= 
+   顶部导航栏 - 精美下拉菜单 (Subnav) 样式 
+   ======================================================= */ 
+/* 1. 父级保持相对定位 */ 
+.nav-item { 
+    position: relative !important; 
+} 
+
+/* 2. 下拉菜单默认隐藏，并向下偏移一点准备做动画 */ 
+.nav-item .subnav { 
+    position: absolute; 
+    top: 130%; /* 默认偏下 */ 
+    left: 50%; 
+    transform: translateX(-50%); /* 绝对居中对齐 */ 
+    background-color: #ffffff; 
+    min-width: 160px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    padding: 10px 0; 
+    z-index: 9999; 
+    
+    /* 隐藏状态 */ 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+} 
+
+/* 3. 顶部小三角指示器（增加精致感） */ 
+.nav-item .subnav::before { 
+    content: ''; 
+    position: absolute; 
+    top: -6px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border-width: 0 6px 6px 6px; 
+    border-style: solid; 
+    border-color: transparent transparent #ffffff transparent; 
+} 
+
+/* 4. 鼠标悬停时，菜单向上平滑浮现 */ 
+.nav-item:hover .subnav { 
+    top: 100%; 
+    opacity: 1; 
+    visibility: visible; 
+} 
+
+/* 5. 下拉菜单里的链接样式 */ 
+.nav-item .subnav a { 
+    display: block !important; 
+    padding: 12px 20px !important; 
+    color: #555 !important; /* 强制颜色，防止被深色导航栏覆盖 */ 
+    font-size: 14px !important; 
+    text-align: center !important; 
+    text-decoration: none !important; 
+    font-weight: normal !important; 
+    transition: all 0.3s ease !important; 
+    white-space: nowrap !important; /* 保持文字不换行 */ 
+} 
+
+/* 6. 链接悬停高亮 */ 
+.nav-item .subnav a:hover { 
+    background-color: #f2f9f9 !important; /* 极浅的主色背景 */ 
+    color: var(--primary-color) !important; 
+    font-weight: bold !important; 
+} 
+
+/* ==================== 解决锚点跳转时被顶部固定导航栏遮挡的问题 ==================== */ 
+#about-section, 
+#culture-section, 
+#honors-section { 
+    scroll-margin-top: 100px !important; /* 预留出导航栏的高度，数值可根据实际微调 */ 
+} 
+
+/* 开启全站平滑滚动，让跳转像动画一样顺滑 */ 
+html { 
+    scroll-behavior: smooth !important; 
+}
+

@@ -1,0 +1,583 @@
+/* =======================================================
+   资质荣誉页面 - 与产品中心 Banner 完全统一
+======================================================= */
+
+/* 全局布局 */
+.container-fluid.page-layout {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 30px !important;
+    padding: 40px 0 80px 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+}
+
+.q-hero {
+    /* 1. 全屏宽度 + 产品中心的背景图 + 半透明遮罩 */
+    width: 100vw !important;
+    height: 60vh !important;
+    min-height: 450px !important;
+    position: relative !important;
+    left: calc(-50vw + 50%) !important;
+    background: linear-gradient(rgba(0, 30, 80, 0.3), rgba(0, 30, 80, 0.5)), url('../images/banner.jpg') center / cover no-repeat !important;
+
+    /* 2. 关键：强制文字左对齐，和产品中心一样 */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-top: 0 !important;
+    margin: 0 !important;
+}
+
+.hero-content {
+    /* 3. 文字容器靠左摆放，和产品中心位置一致 */
+    width: 92% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding-left: 5% !important;
+    text-align: left !important;
+}
+
+/* 4. 英文标题：和产品中心字体/大小/颜色完全匹配 */
+.hero-title-en {
+    font-size: 60px !important;
+    font-weight: bold !important;
+    color: #ffffff !important; /* 强制白色 */
+    line-height: 1.1 !important;
+    margin: 0 0 5px 0 !important;
+    font-family: Arial, sans-serif !important;
+    letter-spacing: 1px !important;
+    text-align: left !important;
+}
+
+/* 5. 中文标题：和产品中心字体/大小/颜色完全匹配 */
+.hero-title-cn {
+    font-size: 60px !important;
+    font-weight: bold !important;
+    color: #ffffff !important; /* 强制白色 */
+    letter-spacing: 2px !important;
+    text-align: left !important;
+    margin: 0 !important;
+    line-height: 1.3 !important;
+}
+
+/* ==================== 以下为你原有正常样式 ==================== */
+:root {
+    --q-section-padding: 90px;
+    --q-title-main-size: 32px;
+    --q-text-normal-size: 15px;
+    --q-img-radius: 16px;
+}
+
+.q-section {
+    padding: var(--q-section-padding) 0;
+    background: #fff;
+}
+
+.q-container {
+    width: 92%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb-bar {
+    background: #fafafa;
+    border-bottom: 1px solid #eaeaea;
+    height: 70px;
+}
+
+.breadcrumb-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.breadcrumb-left {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb-left a {
+    color: #666;
+    transition: 0.3s;
+}
+
+.breadcrumb-left a:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumb-home-icon {
+    font-size: 16px;
+    margin-top: -2px;
+}
+
+.breadcrumb-tabs {
+    display: flex;
+    height: 100%;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+}
+
+.tab-btn {
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+    border-right: 1px solid #eaeaea;
+}
+
+.tab-btn:last-child {
+    border-right: none;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    color: var(--primary-color);
+    background: #fff;
+    font-weight: bold;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.section-title-box h2 {
+    font-size: 28px;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.8px;
+}
+
+.section-deco {
+    display: flex;
+    gap: 8px;
+}
+
+.section-deco span:first-child {
+    width: 35px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.section-deco span:last-child {
+    width: 15px;
+    height: 4px;
+    background: #ccc;
+    border-radius: 2px;
+}
+
+.view-more-rounded {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 24px;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    color: var(--primary-color);
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.view-more-rounded span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.view-more-rounded:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.view-more-rounded:hover span {
+    background: #fff;
+    color: var(--primary-color);
+}
+
+.about-flex-container {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.about-left-stats {
+    flex: 0 0 35%;
+    display: flex;
+    gap: 50px;
+    padding-top: 10px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-val-group {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.stat-val {
+    font-size: 56px;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.stat-plus {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    vertical-align: super;
+}
+
+.stat-box p {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.about-right-text {
+    flex: 1;
+}
+
+.about-right-text p {
+    text-indent: 2em; /* 首行缩进两字符 */
+    font-family: "SimHei", "黑体", sans-serif; /* 设置为黑体 */
+    font-size: 16px;
+    color: #555;
+    line-height: 2;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.culture-section {
+    background: #fafcff;
+}
+
+.culture-flex-container {
+    display: flex;
+    gap: 60px;
+    align-items: stretch;
+}
+
+.culture-left-img {
+    flex: 0 0 50%;
+    border-radius: var(--q-img-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.culture-left-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.culture-right-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.c-card {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.c-card:hover {
+    transform: translateY(-5px);
+}
+
+.c-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.c-head h4 {
+    font-size: 18px;
+    color: #222;
+    font-weight: bold;
+}
+
+.c-arrow {
+    font-size: 18px;
+    color: #ccc;
+    font-family: Arial;
+}
+
+.c-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.c-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.honors-section {
+    overflow: hidden;
+    padding-bottom: 120px;
+}
+
+.cert-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto 0;
+    perspective: 1600px;
+    padding: 40px 0;
+}
+
+.cert-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.cert-item {
+    position: absolute;
+    width: 290px;
+    height: 410px;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease, z-index 0s;
+    cursor: pointer;
+    background: #fff;
+    border: 6px solid #fff;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+}
+
+.cert-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+.cert-item.active {
+    box-shadow: 0 25px 60px rgba(0, 86, 179, 0.2);
+    border: 10px solid #fff;
+}
+
+.cert-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.cert-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #dcdcdc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cert-dot.active {
+    background: var(--primary-color);
+    width: 30px;
+    border-radius: 5px;
+}
+
+/* 响应式 */
+@media (max-width: 1200px) {
+    .about-flex-container,
+    .culture-flex-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-left-stats {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .culture-left-img {
+        width: 100%;
+        height: 400px;
+    }
+
+    .cert-item {
+        width: 290px;
+        height: 410px;
+    }
+
+    .cert-carousel-container {
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .culture-right-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .breadcrumb-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .tab-btn {
+        padding: 0 20px;
+    }
+}
+/* =======================================================
+   新增：四张图片展示区域及动画样式
+   ======================================================= */
+.gallery-section {
+    padding: 0 0 0px 0; /* 控制与下方文化模块的间距 */
+    background: #fff;
+}
+
+.about-image-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 强制一行四列 */
+    gap: 20px; /* 图片之间的间距 */
+    margin-top: -30px;
+}
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 强制图片为正方形，可根据原图修改 */
+    overflow: hidden;
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+    /* 初始动画状态：向下偏移且透明 */
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保证图片铺满不变形 */
+    transition: transform 0.4s ease;
+}
+
+/* 鼠标悬停微微放大效果 */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* JS触发后的弹入状态 */
+.gallery-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 响应式：屏幕变小时自动变成两列 */
+@media (max-width: 992px) {
+    .about-image-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .about-image-gallery { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 1201px) {
+    .about-right-text {
+        margin-top: -90px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .about-flex-container {
+        /* 减小左右两块的间距（原来是 80px） */
+        gap: 40px;
+    }
+    .about-left-stats {
+        /* 减小左侧数据块的宽度（原来是 35%），从而把空间让给右侧 */
+        flex: 0 0 22%;
+    }
+}
+
+@media (min-width: 769px) {
+    .culture-right-grid {
+        /* 消除右侧网格底部的 20px 默认留白，让图片完美贴合横线 */
+        padding-bottom: 0 !important;
+    }
+}
+
+#honors-section {
+    /* 1. 调整标题距离模块顶部的距离 (原值通常为 80px) */
+    /* 减小这个值，标题会往上提；增大这个值，标题会往下沉 */
+    padding-top: 20px !important;
+
+    /* 2. 调整模块底部的留白，从而控制模块的总高度 */
+    /* 如果觉得整个模块太高，可以减小这个数值 */
+    padding-bottom: 80px !important;
+
+    /* 3. 背景颜色（可选，确保与整体风格一致） */
+    background-color: #fff;
+}
