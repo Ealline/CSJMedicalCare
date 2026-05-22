@@ -26,7 +26,7 @@ function toggleMenu() {
         // 【热门产品】动态数据渲染与自动播放算法
         // ==========================================
         const hotProductsData = [
-            { name: '胸骨中央型凸起固定器', desc: '医用级私人定制<br>舒适透气 自由穿戴', img: 'images/products/sternal-center/1.png', link: 'pectus_sternal-center.html' },
+            { name: '胸骨中央型凸起固定器', desc: '医用级私人定制<br>舒适透气 自由穿戴', img: 'images/products/sternal-center/1.jpg', link: 'pectus_sternal-center.html' },
             { name: '漏斗胸负压吸盘', desc: '采用物理负压原理<br>无创温和治疗', img: 'images/products/funnel-chest/1.png', link: 'funnel-chest.html' },
             { name: '髋关节固定器', desc: '针对发育不良矫正<br>稳定支撑保持正确姿势', img: 'images/products/hip-joint/1.png', link: 'hip-joint.html' },
             { name: '腿型固定器', desc: '用于O型、X型腿矫正<br>有效改善下肢体态', img: 'images/products/leg/1.png', link: 'leg-shape.html' },

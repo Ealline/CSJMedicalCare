@@ -7,7 +7,7 @@
 // 包含所有子产品的名字、所属系列、简述、链接以及对应详情页的主图
 // ==========================================
 const productDatabase = [
-    { name: '胸骨中央型凸起固定器', category: '胸廓畸形系列', desc: '对人体躯干部位的外固定和支撑', link: 'pectus_sternal-center.html', img: 'images/products/sternal-center/1.png' },
+    { name: '胸骨中央型凸起固定器', category: '胸廓畸形系列', desc: '对人体躯干部位的外固定和支撑', link: 'pectus_sternal-center.html', img: 'images/products/sternal-center/1.jpg' },
     { name: '锁骨下胸廓凸起固定器', category: '胸廓畸形系列', desc: '对锁骨下胸廓凸起的外固定和支撑', link: 'pectus_subclavicular.html', img: 'images/products/subclavicular/1.png' },
     { name: '单侧胸廓不对称固定器', category: '胸廓畸形系列', desc: '单侧定制 改善不对称支撑', link: 'pectus_unilateral.html', img: 'images/products/unilateral/1.png' },
     { name: '肋骨外翻塑形固定器', category: '胸廓畸形系列', desc: '物理塑形 改善肋骨外翻', link: 'pectus_rib-flare.html', img: 'images/products/rib-flare/1.png' },
