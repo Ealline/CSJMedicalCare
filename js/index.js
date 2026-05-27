@@ -227,25 +227,27 @@ function toggleMenu() {
             resizeCanvas(); initParticles(); animateParticles();
         }
 
+        // B站视频地址
+        const bilibiliVideoUrl = "https://player.bilibili.com/player.html?isOutside=true&aid=116644064003726&bvid=BV1H4GC6oEKV&cid=38639960579&p=1";
+
         // ==========================================
         // 【视频弹窗】控制逻辑
         // ==========================================
         function openVideoModal() {
             const modal = document.getElementById('videoModal');
-            const video = document.getElementById('promoVideo');
-            if(modal && video) {
+            const videoFrame = document.getElementById('promoVideo');
+            if(modal && videoFrame) {
                 modal.classList.add('show');
-                setTimeout(() => { video.play(); }, 100);
+                videoFrame.src = bilibiliVideoUrl;
             }
         }
 
         function closeVideoModal() {
             const modal = document.getElementById('videoModal');
-            const video = document.getElementById('promoVideo');
-            if(modal && video) {
+            const videoFrame = document.getElementById('promoVideo');
+            if(modal && videoFrame) {
                 modal.classList.remove('show');
-                video.pause(); 
-                video.currentTime = 0; 
+                videoFrame.src = "";
             }
         }
 
